@@ -22,7 +22,7 @@ eureka-consumer的升级版 利用ribbon。
 Spring Cloud feign 通过@EnableFeignClients 开启扫描@FeignClient 结合 Spring MVC mapping、接口绑定web服务API。(扩展了Feign文件上传)
 
 
-### config-client.yml config-client-dev.yml 配置文件存放在根目录为了少创建一个仓库
+### config-client.yml config-client-dev.yml 配置文件存放在根目录为了少创建一个示例仓库
 
 ### config-server 
 一个分布式配置中心 @EnableConfigServer开启
