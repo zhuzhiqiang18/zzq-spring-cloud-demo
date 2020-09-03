@@ -70,3 +70,7 @@ hystrix面板 @EnableHystrixDashboard开启服务
 转发到eureka-consumer服务的请求规则为：/eureka-consumer/**
 
 通过 继承 ZuulFilter类可实现权限拦截等
+
+### stream-kafka
+Spring Cloud Stream
+>Spring Cloud Stream是一个用来为微服务应用构建消息驱动能力的框架。它可以基于Spring Boot来创建独立的、可用于生产的Spring应用程序。它通过使用Spring Integration来连接消息代理中间件以实现消息事件驱动的微服务应用。Spring Cloud Stream为一些供应商的消息中间件产品提供了个性化的自动化配置实现，并且引入了发布-订阅、消费组以及消息分区这三个核心概念
