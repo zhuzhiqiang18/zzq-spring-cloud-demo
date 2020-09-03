@@ -28,3 +28,25 @@ Spring Cloud feign 通过@EnableFeignClients 开启扫描@FeignClient 结合 Spr
 ### config-server 
 一个分布式配置中心 @EnableConfigServer开启
 
+### config-server-eureka
+一个分布式配置中心 注册到eureka 
+
+### config-client
+一个用来从 分布式配置中心 获取配置的demo 因为分布式配置中心 注册到注册中心 所以可以通过注册中心获取配置
+只需配置注册中心地址  指定的服务名称
+可以通过RefreshScope热更新配置 （通过spring-boot-starter-actuator模块的/refresh）
+```properties
+#注册中心
+eureka.client.serviceUrl.defaultZone=http://127.0.0.1:10001/eureka/
+#开启通过服务来访问Config Server
+spring.cloud.config.discovery.enabled=true
+#指定访问的服务
+spring.cloud.config.discovery.serviceId=config-server-eureka
+#环境配置
+spring.cloud.config.profile=dev
+#关闭鉴权RefreshScope
+management.security.enabled=false
+```
+
+
+
