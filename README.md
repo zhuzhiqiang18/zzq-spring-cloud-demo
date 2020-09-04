@@ -78,3 +78,9 @@ Spring Cloud Stream
 ### alibaba-nacos-server
 一个注册在nacos上的服务提供者  
 注意这里和eureka-server 区别在于 前者是注册中心本体  而后者是借助外部nacos注册中心 注册的一个微服务模块提供API
+> [nacos](https://github.com/alibaba/nacos/releases)启动   
+> Linux/Unix/Mac：sh startup.sh -m standalone
+>
+> Windows：cmd startup.cmd -m standalone
+> 
+> 默认用户名 密码 nacos
