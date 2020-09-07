@@ -111,3 +111,18 @@ spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
 >在采用默认值的应用要加载的配置规则就是：Data ID=${spring.application.name}.properties，Group=DEFAULT_GROUP。
  
 建议这些配置不要配置在bootstrap.properties  而是在发布脚本的启动命令中，用-Dspring.profiles.active=DEV的方式来动态指定，会更加灵活
+
+
+```properties
+spring.cloud.nacos.config.shared-dataids=actuator.properties,log.properties
+spring.cloud.nacos.config.refreshable-dataids=actuator.properties,log.properties
+```
+spring.cloud.nacos.config.shared-dataids 参数用来配置多个共享配置的Data Id，多个的时候用用逗号分隔
+
+spring.cloud.nacos.config.refreshable-dataids 参数用来定义哪些共享配置的Data Id在配置变化时，应用中可以动态刷新，多个Data Id之间用逗号隔开。如果没有明确配置，默认情况下所有共享配置都不支持动态刷新
+
+### alibaba-sentinel-dashboard 
+对标 hystrix-dashboard 与nacos类似单独下载部署
+>sentinel-dashboard：与hystrix-dashboard类似，但是它更为强大一些。除了与hystrix-dashboard一样提供实时监控之外，还提供了流控规则、熔断规则的在线维护等功能。
+>
+>客户端整合：每个微服务客户端都需要整合sentinel的客户端封装与配置，才能将监控信息上报给dashboard展示以及实时的更改限流或熔断规则等

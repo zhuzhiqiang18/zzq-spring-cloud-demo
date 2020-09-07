@@ -15,9 +15,9 @@ public class TestController {
     RestTemplate restTemplate;
 
     @GetMapping("/test")
-    public String test(){
+    public String test() {
         ServiceInstance serviceInstance = loadBalancerClient.choose("alibaba-nacos-server");
-        String url = serviceInstance.getUri()+"/test";
-        return "alibaba-nacos-client->"+restTemplate.getForObject(url,String.class);
+        String url = serviceInstance.getUri() + "/test";
+        return "alibaba-nacos-client->" + restTemplate.getForObject(url, String.class);
     }
 }
