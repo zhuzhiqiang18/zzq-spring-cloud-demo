@@ -84,3 +84,6 @@ Spring Cloud Stream
 > Windows：cmd startup.cmd -m standalone
 > 
 > 默认用户名 密码 nacos
+
+### alibaba-nacos-client
+注册一个模块到nacos 并且通过服务发现远程调用 alibaba-nacos-server
