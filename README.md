@@ -87,3 +87,13 @@ Spring Cloud Stream
 
 ### alibaba-nacos-client
 注册一个模块到nacos 并且通过服务发现远程调用 alibaba-nacos-server
+
+### alibaba-nacos-config-client
+nacos 作为配置中心 本模块获取配置中心配置
+需要注意 nacos 注册中心 配置中心 地址一样 配置别名不一致
+```properties
+#配置中心
+spring.cloud.nacos.config.server-addr=127.0.0.1:8848
+#注册中心
+spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
+```
