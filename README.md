@@ -97,3 +97,17 @@ spring.cloud.nacos.config.server-addr=127.0.0.1:8848
 #注册中心
 spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
 ```
+
+> Data ID中的alibaba-nacos-config-client：对应客户端的配置spring.cloud.nacos.config.prefix，默认值为${spring.application.name}，即：服务名
+>
+> Data ID中的properties：对应客户端的配置spring.cloud.nacos.config.file-extension，默认值为properties
+>
+> Group的值DEFAULT_GROUP：对应客户端的配置spring.cloud.nacos.config.group，默认值为DEFAULT_GROUP
+>
+>spring.profiles.active=DEV
+>
+>${spring.cloud.nacos.config.prefix}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+>
+>在采用默认值的应用要加载的配置规则就是：Data ID=${spring.application.name}.properties，Group=DEFAULT_GROUP。
+ 
+建议这些配置不要配置在bootstrap.properties  而是在发布脚本的启动命令中，用-Dspring.profiles.active=DEV的方式来动态指定，会更加灵活
